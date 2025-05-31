@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"car_balance\startup_stm32f103xb.o"
+"car_balance\main.o"
+"car_balance\stm32f1xx_it.o"
+"car_balance\stm32f1xx_hal_msp.o"
+"car_balance\stm32f1xx_hal_gpio_ex.o"
+"car_balance\stm32f1xx_hal_i2c.o"
+"car_balance\stm32f1xx_hal.o"
+"car_balance\stm32f1xx_hal_rcc.o"
+"car_balance\stm32f1xx_hal_rcc_ex.o"
+"car_balance\stm32f1xx_hal_gpio.o"
+"car_balance\stm32f1xx_hal_dma.o"
+"car_balance\stm32f1xx_hal_cortex.o"
+"car_balance\stm32f1xx_hal_pwr.o"
+"car_balance\stm32f1xx_hal_flash.o"
+"car_balance\stm32f1xx_hal_flash_ex.o"
+"car_balance\stm32f1xx_hal_exti.o"
+"car_balance\stm32f1xx_hal_uart.o"
+"car_balance\system_stm32f1xx.o"
+--strict --scatter "Car_balance\Car_balance.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Car_balance.map" -o Car_balance\Car_balance.axf
