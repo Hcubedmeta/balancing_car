@@ -1,0 +1,13 @@
+Added Component: Designator=HD?(HED2)
+Added Component: Designator=HD?(HED2)
+Added Pin To Net: NetName=GND Pin=HD?-1
+Added Pin To Net: NetName=GND Pin=HD?-1
+Added Pin To Net: NetName=5V Pin=HD?-2
+Added Pin To Net: NetName=5V Pin=HD?-2
+Added Pin To Net: NetName=5V Pin=STM1-1
+Added Pin To Net: NetName=GND Pin=STM1-2
+Added Pin To Net: NetName=5V Pin=STM1-3
+Added Pin To Net: NetName=GND Pin=STM1-4
+Added Member To Class: ClassName=MACHNGUYENLI Member=Component HD? Header 2
+Added Member To Class: ClassName=MACHNGUYENLI Member=Component HD? Header 2
+Added Room: Name=MACHNGUYENLI

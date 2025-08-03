@@ -1,0 +1,25 @@
+Removed Pin From Net: NetName=GND Pin=HD?-1
+Removed Pin From Net: NetName=GND Pin=HD?-1
+Removed Pin From Net: NetName=5V Pin=HD?-2
+Removed Pin From Net: NetName=5V Pin=HD?-2
+Removed Pin From Net: NetName=5V Pin=STM1-1
+Removed Pin From Net: NetName=GND Pin=STM1-2
+Removed Pin From Net: NetName=5V Pin=STM1-3
+Removed Pin From Net: NetName=GND Pin=STM1-4
+Change Component Comment : Designator=HD? Old Comment=Header 2 New Comment=
+Change Component Designator: OldDesignator=HD? NewDesignator=HD2
+Change Component Designator: OldDesignator=HD? NewDesignator=HD3
+Added Pin To Net: NetName=OUT1 Pin=HD2-2
+Added Pin To Net: NetName=OUT1 Pin=STM1-1
+Added Net: Name=OUT1
+Added Pin To Net: NetName=OUT2 Pin=HD2-1
+Added Pin To Net: NetName=OUT2 Pin=STM1-2
+Added Net: Name=OUT2
+Added Pin To Net: NetName=OUT3 Pin=HD3-2
+Added Pin To Net: NetName=OUT3 Pin=STM1-3
+Added Net: Name=OUT3
+Added Pin To Net: NetName=OUT4 Pin=HD3-1
+Added Pin To Net: NetName=OUT4 Pin=STM1-4
+Added Net: Name=OUT4
+Added Member To Class: ClassName=MACHNGUYENLI Member=Component HD3 Header 2
+Added Room: Name=MACHNGUYENLI

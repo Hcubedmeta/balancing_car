@@ -1,0 +1,42 @@
+Added Component: Designator=HD1(HED2T)
+Added Component: Designator=JP1(JP8)
+Added Component: Designator=JP2(JP6)
+Added Component: Designator=STM1(STM32F103 KIT)
+Added Pin To Net: NetName=5V Pin=HD1-2
+Added Pin To Net: NetName=5V Pin=JP1-8
+Added Pin To Net: NetName=5V Pin=JP2-5
+Added Pin To Net: NetName=5V Pin=STM1-18
+Added Net: Name=5V
+Added Pin To Net: NetName=GND Pin=HD1-1
+Added Pin To Net: NetName=GND Pin=JP1-7
+Added Pin To Net: NetName=GND Pin=JP2-4
+Added Pin To Net: NetName=GND Pin=STM1-19
+Added Pin To Net: NetName=GND Pin=STM1-39
+Added Pin To Net: NetName=GND Pin=STM1-40
+Added Net: Name=GND
+Added Pin To Net: NetName=OUT1 Pin=STM1-1
+Added Net: Name=OUT1
+Added Pin To Net: NetName=OUT2 Pin=STM1-2
+Added Net: Name=OUT2
+Added Pin To Net: NetName=OUT3 Pin=STM1-3
+Added Net: Name=OUT3
+Added Pin To Net: NetName=OUT4 Pin=STM1-4
+Added Net: Name=OUT4
+Added Pin To Net: NetName=RX Pin=JP2-2
+Added Pin To Net: NetName=RX Pin=STM1-28
+Added Net: Name=RX
+Added Pin To Net: NetName=SCL Pin=JP1-6
+Added Pin To Net: NetName=SCL Pin=STM1-14
+Added Net: Name=SCL
+Added Pin To Net: NetName=SDA Pin=JP1-5
+Added Pin To Net: NetName=SDA Pin=STM1-15
+Added Net: Name=SDA
+Added Pin To Net: NetName=TIM1_CH1 Pin=STM1-5
+Added Net: Name=TIM1_CH1
+Added Pin To Net: NetName=TIM1_CH2 Pin=STM1-6
+Added Net: Name=TIM1_CH2
+Added Pin To Net: NetName=TX Pin=JP2-3
+Added Pin To Net: NetName=TX Pin=STM1-27
+Added Net: Name=TX
+Added Class: Name=MACHNGUYENLI
+Added Room: Name=MACHNGUYENLI

@@ -22,7 +22,7 @@ double gyro_rate;
 double angle_pitch;
 float acc_angle;
 
-float Kp = 1.0, Ki = 0.25, Kd = 100; // H? s? PID (c?n ch?nh cho xe c? th?)
+float Kp = 0.38, Ki = 0.08, Kd = 0.009; // H? s? PID (c?n ch?nh cho xe c? th?)
 float error = 0, last_error = 0, integral = 0, derivative = 0, output = 0;
 const float desired_angle = 0.0; // Góc cân b?ng mong mu?n (th?ng d?ng)
 
@@ -36,7 +36,7 @@ const float max_integral = 100.0; // Ch?ng windup
 double filter_pitch = 0.0;
 
 char rx;
-float angle_offset = 0.0f;
+float angle_offset = 0.15f;
 
 /*--------------------------------*/
 I2C_HandleTypeDef hi2c1;
@@ -75,28 +75,31 @@ int main(void)
   GPIOB->BRR = (1<<13) | (1<<15);  // EN1 và EN2 LOW (b?t)
   while (1)
   {
-    if (USART2->SR & USART_SR_RXNE)
-    {
-        rx = USART2->DR;
+		if (USART2->SR & USART_SR_RXNE) {
+				char rx = USART2->DR;  // Nh?n ký t?
 
-        if (rx == 'F') {
-            angle_offset = -7.0;
-        }
-        else if (rx == 'B') {
-            angle_offset = 5.0;
-        }
-        else if (rx == 'S') {
-            angle_offset = 0.0f;
-        }
-    }
+				// Ph?n h?i ký t? l?i v? di?n tho?i
+				while (!(USART2->SR & USART_SR_TXE));  // Ch? d?n khi buffer truy?n tr?ng
+				USART2->DR = rx;
+
+				// X? lý tùy theo ký t? nh?n du?c
+				if (rx == 'F') {
+						angle_offset = -7.0;
+				} else if (rx == 'B') {
+						angle_offset = 5.0;
+				} else if (rx == 'S') {
+						angle_offset = 0.0f;
+				}
+		}
+
 		start = HAL_GetTick();
 		if (start - last >= 5) {
 				last = start;
 				gyro_signalen();
-				filter_pitch = 0.8 * filter_pitch + 0.2 * gyro_pitch;
-				gyro_rate = (filter_pitch - gyro_pitch_cal) / 65.5;
+				filter_pitch = 0.9 * filter_pitch + 0.1 * gyro_roll;
+				gyro_rate = (filter_pitch - gyro_roll_cal) / 65.5;
 
-				acc_angle = atan2(-(acc_x - accel_roll_cal) / 4096, acc_z / 4096) * RAD_TO_DEG;
+				acc_angle = atan2((acc_y - accel_pitch_cal) / 4096, acc_z / 4096) * RAD_TO_DEG;
 				angle_pitch = 0.995 * (angle_pitch + gyro_rate * 0.005) + 0.005 * acc_angle;
 				error = angle_pitch - angle_offset;
 				PID_Caculate();
@@ -191,7 +194,7 @@ void TIM1_PWM_Init(void) {
     GPIOA->CRH |= GPIO_CRH_CNF8_1 | GPIO_CRH_MODE8_1 | GPIO_CRH_CNF9_1 | GPIO_CRH_MODE9_1;
     
     // 3. C?u hình TIM1 PWM
-    TIM1->PSC = 8 - 1;      // Prescaler: 72MHz/6 -> 12MHz
+    TIM1->PSC = 7 - 1;      // Prescaler: 72MHz/6 -> 12MHz
     TIM1->ARR = 1000 - 1;    // Period: 12000 ticks -> 12kHz PWM
     
     // C?u hình kênh 1 (PA8)
